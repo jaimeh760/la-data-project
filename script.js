@@ -308,7 +308,8 @@ function showLess() {
     document.getElementById("load-card-7").style.display = "none";
     document.getElementById("load-card-8").style.display = "none";
     document.getElementById("load-card-9").style.display = "none";
-    document.getElementById("load-more-button").style.display = "none";
+    document.getElementById("load-more-button").style.display = "inherit";
+    document.getElementById("show-less-button").style.display = "none";
 }
 
 var aboutParagraph = `

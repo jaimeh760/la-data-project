@@ -153,8 +153,12 @@ footer {
     background-color: #795548 !important;
 }
 
-#load-more-button:hover {
+#load-more-button:hover, #show-less-button:hover {
     background-color: #bcaaa4 !important;
+}
+
+#show-less-button {
+    display: none;
 }
 
 i {
