@@ -1,0 +1,465 @@
+<!DOCTYPE HTML>
+<!-- http://materializecss.com/ -->
+<html>
+    <body>
+        <head>
+            <link rel="icon" href="images/logo.png" />
+            <title>
+                LA Data Project
+            </title>
+            
+            <link rel="stylesheet" href="style.css" />
+            <script type="text/javascript" src="script.js"></script>
+            
+            <!-- Materialize -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            
+            <!-- fonts -->
+            <link href="https://fonts.googleapis.com/css?family=Libre+Franklin|Maven+Pro|Russo+One" rel="stylesheet">
+            <!-- https://developers.google.com/fonts/docs/getting_started -->
+        </head>
+        
+        <div id="header">
+            <img style="width:50px;float:left;" src="images/logo.png">
+            <h1>LA Hamusta Data</h1>
+            <h4>
+                A dangerous hamster site with dangerous crime data in Los Angeles.
+            </h4>
+        </div>
+        
+        <div id="left-column">
+            <!--left-->
+            <p id="intro" class="z-depth-2">
+                In this site, you will encounter the world's most rebellious hamsters and discover crimes done around Los Angeles from year to year.
+                You will be able to see, with your own eyes, what little rodents do when humans are absent.
+                This is a site where you can learn about a list of various crimes and hamsters who committed the most unforgivable hamster crime.
+            </p>
+            
+            <a id="about-button" class="waves-effect waves-light btn disabled" onclick="about()">About</a>
+            <a id="how-it-works-button" class="waves-effect waves-light btn" onclick="howItWorks()">How it Works</a>
+            <a id="q-and-a-button" class="waves-effect waves-light btn" onclick="qAndA()">Q & A</a>
+        </div>
+        
+        <div id="right-column">
+            <!--right-->
+            <div id="fixed-img-div"> 
+                <h3>
+                There was a total of over one million hamster crimes since 2010 through 2017, 
+                and here is a list of some of the worst crimes done within those years: 
+                </h3>
+                <a id="show-list" class="waves-effect waves-light btn disabled" onclick={getLADataFromAPI()}>
+                    Show List
+                </a>
+                <div id="table-div">
+                    <table class="striped responsive-table z-depth-5">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Crime</th>
+                                <th>Location</th>
+                                <th>Victim Sex</th>
+                                <th>Victim Age</th>
+                            </tr>
+                        </thead>
+                        <tbody id="result"></tbody>
+                    </table>
+                </div>
+            </div>
+        
+            <h2>The following criminals are some of LA's most vicious hamsters.</h2>
+            
+            <div class="row">
+                <div id="card-div">
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-1.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Identity Thief<i class="material-icons right"></i></span>
+                            <p id="criminal-info-1"></p>
+                        </div>
+                        <div class="card-reveal s4">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                This hamster has been convicted for stealing the identity of a young cashew. 
+                                It is a violation of the Federal Hamster Law to utilize another's identity due to the Hamster Identity Theft and Hamster Assumption Deterrence Act.
+                                Rumors has it that this hamster not only stole the identity of a young cashew but stole the idenity of the Hamster FDA and used it to deceive the public about producing legitimate food.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-2.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Purse Snatcher<i class="material-icons right"></i></span>
+                            <p id="criminal-info-2"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                Throughout its whole life, this hamster had to endure tribulation from the United Hamster States of Hamerica.
+                                All it did was wait for a miracle to happen, but it realized, as the sky shed tears on its life, that miracles were nothing but myths;
+                                they were a mere distant future that never got to exist in a world of misery. 
+                                It implores everyday for at least a coin, but no one ever seem to care. 
+                                So, it became a thief; it snatched a hamster's purse, anticipating it contained fortune, and it ran. 
+                                It ran excessively fast like the Flash Hamster from DC Hamsters. 
+                                It was so fast that the cops was able to catch up in less than one minute.
+                                Yet, this hamster had a heart and returned the purse back to its owner by throwing it at a distance of 3 meters.
+                                However, the hamster cops arrested it either way.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-3.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Almond Kidnapper<i class="material-icons right"></i></span>
+                            <p id="criminal-info-3"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                This hamster has been convicted for the abduction of almonds. 
+                                It is said that this hamster abducted more than twenty almonds and have been keeping them underground.
+                                No one has ever found the missing almonds until a decade later.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-4.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Animal Abuser<i class="material-icons right"></i></span>
+                            <p id="criminal-info-4"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                This hamster was arrested for illegally biting a human. 
+                                It all occured when a human stook a finger towards the hamster's face.
+                                The hamster asserted that it was aggravated by the dirty nails the human had.
+                                So, it took a bite of the finger to convey not to let filth get close by.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-5.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Peeping Tom<i class="material-icons right"></i></span>
+                            <p id="criminal-info-5"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                Commonly known as the Pervert Hamster. 
+                                It all began... when this tiny creature had its eyes stuck on a lovely human.
+                                The human seem to care less if the hamster was secretly watching her change clothes or not because she assumes the hamster is just a hamster.
+                                She was wrong. It's not just a hamster... it's a hamster... PERVERT.  
+                                Unfortunately, the hamster was caught by the Hamster Police Department and was arrested for secretly watching a human change for sexual pleasure.
+                                After all, that hamster must've had a good time.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-6.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Trespasser<i class="material-icons right"></i></span>
+                            <p id="criminal-info-6"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                It has been a darkest night. The moon shines brightly. 
+                                Rains fall. Sweat replenishes. Energy sinks. 
+                                Trails come by every step of the way. There is no water. It was dying of thirst.
+                                With a couple of energy left, it saw what looks like an abandoned Smurf home.
+                                And as it steps closer, more homes appear. They look identical.
+                                But, which one has the source of hydration? 
+                                It was like a game of hide and seek; water is hidden, and the little fellow finds the treasure.
+                                The tiny hamster sought for water. One of the homes must have what it desires.
+                                As soon as it reaches for the knob, the hamster cops caught it offguard and arrested it for trespassing a home available for any hamster to share and live in like a communist hamster home.
+                                Farewell. Farewell, little fellow.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-1" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-7.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Vehicle Harasser<i class="material-icons right"></i></span>
+                            <p id="criminal-info-7"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                It hates cars. 
+                                The sound they make, makes the hamster poop abruptly. 
+                                It thought throwing its feces at it would make the car stop making noise.
+                                Sadly, it was caught by the hamster cops, and they arrested it for illegally throwing an object at a toy car that was moving with the wind.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-2" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-8.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Rood the Rude Hamster<i class="material-icons right"></i></span>
+                            <p id="criminal-info-8"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                The world is corrupted.
+                                All are lies.
+                                No one can be trusted.
+                                There is no such thing as peace.
+                                It was until war was the only option to massively reduce the population of this treacherous world.
+                                None can support the entire population... of hamsters.
+                                None are safe.
+                                None will be able to survive what is to come.
+                                It will be the survival of the fittest.
+                                Only the strong and intelligent will survive.
+                                This was all the fault of Rood. 
+                                Rood was the ruler of the United Hamster States of Hamerica, and everyone hates it.
+                                It must have its crown taken down before this world comes to an end.
+                                That is why the Batman hamster took it down and saved this world from evil.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-3" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-9.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Lecherous Writer<i class="material-icons right"></i></span>
+                            <p id="criminal-info-9"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                <i style="font-style:italic;">
+                                    "Dear Henny,
+                                    <br />
+                                    Pencil, paper, pen,
+                                    <br />
+                                    Hammy, hamster, hen;
+                                    <br />
+                                    All I want is a chicken thigh,
+                                    <br />
+                                    Let me have your legs up high...
+                                    <br />
+                                    Love,
+                                    <br />
+                                    Hammy"
+                                    <br />
+                                </i>
+                                <br />
+                                <hr />
+                                That was enough to get this hamster arrested for its crude letters.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-4" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-10.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Luke Hamsterwalker<i class="material-icons right"></i></span>
+                            <p id="criminal-info-10"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                <b>Luke Hamsterwalker</b>: I unfollowed you on Hamsterbook because you keep saying you're "Anakin Hamsterwalker".
+                                <br />
+                                <b>Darth Hamster</b>: I am your father.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: You wish. 
+                                <br />
+                                <b>Darth Hamster</b>: I am.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: Then, you must be joking. You can't be real.
+                                <br />
+                                <b>Darth Hamster</b>: I am real.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: If you're real, then fight me.
+                                <br />
+                                <b>Darth Hamster</b>: I am going to fight you.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: (typing...)
+                                <br />
+                                <b>Darth Hamster</b>: I am getting impatient.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: How about we settle this irl? I bet you can't even lay a scratch on me.
+                                <br />
+                                <b>Darth Hamster</b>: I am getting angry.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: You sound like a robot, so you must be fake. No wonder you don't look like any of your pictures online.
+                                <br />
+                                <b>Darth Hamster</b>: (typing...)
+                                <br />
+                                <b>Luke Hamsterwalker</b>: Catfisher... 
+                                <br />
+                                <b>Luke Hamsterwalker</b>: I bet you only get online because you can't get anyone irl.
+                                <br />
+                                <b>Darth Hamster</b>: We will fight to the death, and you will meet your death.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: Ooo, I'm so scared.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: Btw, what's with the mask? Are you that ugly?
+                                <br />
+                                <b>Darth Hamster</b>: Because of what happened back in Mustafar...
+                                <br />
+                                <b>Luke Hamsterwalker</b>: So, you're insecure about your face?
+                                <br />
+                                <b>Darth Hamster</b>: Let us begin our epic battle.
+                                <br />
+                                <b >Luke Hamsterwalker</b>: [unsheathes my lightsaber]
+                                <br />
+                                <b>Darth Hamster</b>: [unsheathes my lightsaber]
+                                <br />
+                                <b>Luke Hamsterwalker</b>: [kills Darth Hamster immediately]
+                                <br />
+                                <b>Darth Hamster</b>: You are cheating.
+                                <br />
+                                <b>Luke Hamsterwalker</b>: No, I wasn't.
+                                <br />
+                                <hr />
+                                Luke Hamsterwalker was arrested for killing Darth Hamster while roleplaying.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-5" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-11.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Sexual Predator<i class="material-icons right"></i></span>
+                            <p id="criminal-info-11"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                Over one-hundred almonds were raped by this predator. 
+                                Yet, it was only given five months of probation.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-6" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-12.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Garbage Thief<i class="material-icons right"></i></span>
+                            <p id="criminal-info-12"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                It had dreams of creating its own business and become rich like the white hamsters.
+                                But, it never had the chance due to its poor standard of living.
+                                All it desired. All it wanted was to live a happy life.
+                                It thought it never will. 
+                                Then, it was able to find the right materials to have its dream come true.
+                                It dug up from garbage to garbage, collecting tools, items and antiques to refine them and use them.
+                                It found wood, nails, and a hammer.
+                                This was all it needed to build its dream business and live a new life.
+                                Due to digging up garbage from other hamsters' homes, it was arrested for robbery.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-7" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-13.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Vehicle Thief<i class="material-icons right"></i></span>
+                            <p id="criminal-info-13"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                It anticipated that it can get away with anything. 
+                                It runs around town trying to find which hamster house to steal from.
+                                Once it saw the most aesthetic-looking toy car, it broke its window and got in.
+                                Vroom. Vroom. Vroom. The car started its engine.
+                                The noise can be heard from afar, alarming the HPD.
+                                The little hamster drove the car while leaving trails behind.
+                                The HPD was at its tail.
+                                The hamster drove at an intense velocity of one mile per hour.
+                                It was pretty fast for a toy car.
+                                With a velocity of two miles per hour, the hamster police were able to surround the car thief and turn it in to prison. 
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-8" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-14.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Innocent Hamster<i class="material-icons right"></i></span>
+                            <p id="criminal-info-14"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                This hamster was arrested for being too black.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div id="load-card-9" class="card hoverable">
+                        <div class="card-image waves-effect waves-block waves-light">
+                            <img class="activator" src="images/h-15.jpg" title="Click to Learn More">
+                        </div>
+                        <div class="card-content">
+                            <span class="card-title activator grey-text text-darken-4">Child Abuser<i class="material-icons right"></i></span>
+                            <p id="criminal-info-15"></p>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4"><i class="material-icons right">x</i></span>
+                            <p>
+                                This hamster was convicted for child abuse. 
+                                It was trying to fatten up its nut to have diabetes and make the taste last longer.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                </div>
+                <a id="load-more-button" class="btn-floating btn-large waves-effect waves-light pulse" onclick="loadMore()" title="Load More">
+                    <i class="material-icons">+</i>
+                </a>
+            </div>
+            
+            <footer class="brown darken-4">&copy 2017</footer>
+        </div>
+    </body>
+</html> 
