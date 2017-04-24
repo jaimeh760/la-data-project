@@ -35,6 +35,18 @@ h4 {
     float: left;
 }
 
+#intro {
+    margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 30px;
+    background-color: white;
+    width: 90%;
+    height: 270px;
+    border-radius: 3px;
+    overflow-y: scroll;
+}
+
 #right-column {
     margin-top: 114px;
     width: 75%;
@@ -152,18 +164,6 @@ i {
 #load-card-1, #load-card-2, #load-card-3, #load-card-4, #load-card-5, 
 #load-card-6, #load-card-7, #load-card-8,#load-card-9 {
     display: none;
-}
-
-#intro {
-    margin: 0 auto;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding: 30px;
-    background-color: white;
-    width: 90%;
-    height: 300px;
-    border-radius: 3px;
-    overflow-y: scroll;
 }
 
 blockquote {
