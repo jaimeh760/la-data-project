@@ -147,7 +147,7 @@ footer {
     text-align: center;
 }
 
-#load-more-button {
+#load-more-button, #show-less-button {
     margin: 15px;
     float: right;
     background-color: #795548 !important;

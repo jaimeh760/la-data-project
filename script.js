@@ -295,7 +295,20 @@ function loadMore() {
     document.getElementById("load-card-8").style.display = "inline-block";
     document.getElementById("load-card-9").style.display = "inline-block";
     document.getElementById("load-more-button").style.display = "none";
-    document.getElementById("load-more-button").className = "scale-transition scale-out";
+    document.getElementById("show-less-button").style.display = "inherit";
+}
+
+function showLess() {
+    document.getElementById("load-card-1").style.display = "none";
+    document.getElementById("load-card-2").style.display = "none";
+    document.getElementById("load-card-3").style.display = "none";
+    document.getElementById("load-card-4").style.display = "none";
+    document.getElementById("load-card-5").style.display = "none";
+    document.getElementById("load-card-6").style.display = "none";
+    document.getElementById("load-card-7").style.display = "none";
+    document.getElementById("load-card-8").style.display = "none";
+    document.getElementById("load-card-9").style.display = "none";
+    document.getElementById("load-more-button").style.display = "none";
 }
 
 var aboutParagraph = `
