@@ -2,7 +2,11 @@
 
 // https://data.lacity.org/A-Prosperous-City/Job-Applicants-by-Gender-and-Ethnicity/mkf9-fagf
 
-//function getLADataFromAPI(){
+window.onload = function() {
+    getLADataFromAPI();
+}
+
+function getLADataFromAPI(){
     var endpoint = "https://data.lacity.org/resource/7fvc-faax.json";
     fetch(endpoint)
     .then(function(data) {
@@ -282,8 +286,9 @@
     .catch(function(error) {
        console.log(error); 
     }); // catches any erros and console.logs the error for inspection
-//}
+}
 
+// left column functions
 function loadMore() {
     document.getElementById("load-card-1").style.display = "inline-block";
     document.getElementById("load-card-2").style.display = "inline-block";
